@@ -51,7 +51,6 @@
                                  @endif
                              </div>
                          </div>
-                         <h4 class="real-p">نفر اول</h4>
                          <div class="form-group required {{ $errors->has('gender') ? ' has-error' : '' }}">
                              <label for="name" class="col-md-3 right12">جنسیت</label>
 
@@ -343,7 +342,7 @@
                          </div>
 
                          <div class="legal-p">
-                             <h4 class="real-p">نفر دوم</h4>
+                             <h4 class="legal-p">نفر دوم</h4>
                              <div class="form-group required {{ $errors->has('gender_2') ? ' has-error' : '' }}">
                                  <label for="name" class="col-md-3 right12">جنسیت</label>
 

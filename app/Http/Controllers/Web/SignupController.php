@@ -12,7 +12,8 @@ use Illuminate\Validation\Rule;
 
 class SignupController extends Controller
 {
-    private $price = '1000';
+    private $price_legal = '1000';
+    private $price_real = '1000';
     public function create(){
         $provinces = Province::all();
         return view('signup.register',compact('provinces'));
@@ -27,11 +28,11 @@ class SignupController extends Controller
             'mobile' => 'required|string|max:255',
             'tell' => 'required|string|max:255',
             'city_id' => 'exists:city,id',
-            'email_2' => 'required_if:personality,"real"',
-            'national_code_2' => 'required_if:personality,"real"',
-            'post_code_2' => 'required_if:personality,"real"',
-            'mobile_2' => 'required_if:personality,"real"',
-            'tell_2' => 'required_if:personality,"real"',
+            'email_2' => 'required_if:personality,"legal"',
+            'national_code_2' => 'required_if:personality,"legal"',
+            'post_code_2' => 'required_if:personality,"legal"',
+            'mobile_2' => 'required_if:personality,"legal"',
+            'tell_2' => 'required_if:personality,"legal"',
             'city_id_2' => 'exists:city,id',
 //            'address' => 'string|max:511',
 
@@ -98,9 +99,10 @@ class SignupController extends Controller
 
 
         $signup->save();
-        $transaction->make($this->price,$signup);
+        $price = ($request->personality == 'real')?$this->price_real:$this->price_legal;
+        $transaction->make($price,$signup);
         $signup->transaction_id = $transaction->getId();
-        if ($request->personality == 'real' && isset($request->name_2)){
+        if ($request->personality == 'legal' && isset($request->name_2)){
             $signup = new Signup();
             $signup->active = 0;
             $signup->user_id = $user->id;
@@ -115,7 +117,7 @@ class SignupController extends Controller
             $signup->address = $request->address_2;
             $signup->recommender = $request->recommender;
             $signup->suggestion = $request->suggestion;
-            $signup->gender = ($request->gender == 'f')?0:1;
+            $signup->gender = ($request->gender_2 == 'f')?0:1;
             $signup->personality = ($request->personality == 'real')?0:1;
 
             $education = [];
@@ -151,7 +153,7 @@ class SignupController extends Controller
     public function verify(){
         $transaction = ArianPalController::RetriveTransacton();
         if ($transaction->verify())
-            return view('signup.verify',compact('transaction'));;
+            return view('signup.verify',compact('transaction'));
     }
 
 }

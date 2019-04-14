@@ -49,19 +49,8 @@
                             </tbody>
 
                         </table>
-                     <form class="form-horizontal" role="form" method="POST" action="{{ route('signup.payment') }}">
-
-                            {{ csrf_field() }}
-
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-3">
-                                    <button type="submit" class="btn btn-primary">
-                                         پرداخت
-                                    </button>
-                                </div>
-                            </div>
-
-                        </form>
+                     <p>ثبت نام شما با موفقیت انجام شد</p>
+                        <a href="{{ url('/') }}">صفحه اصلی</a>
 
                     </div>
                 </div>
