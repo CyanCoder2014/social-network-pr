@@ -115,7 +115,7 @@ class ArianPalController extends TransactionController
 
         try {
             $soap = new \SoapClient($this->serverUrl, ['encoding' => 'UTF-8']);
-            $response = $soap->PaymentVerification($fields);
+            $response = $soap->VerifyPayment($fields);
             $Status = $response->verifyPaymentResult->ResultStatus;
             $PayPrice = $response->verifyPaymentResult->PayementedPrice;
 
