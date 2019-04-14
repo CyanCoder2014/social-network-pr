@@ -12,8 +12,8 @@ use Illuminate\Validation\Rule;
 
 class SignupController extends Controller
 {
-    private $price_legal = '1000';
-    private $price_real = '1000';
+    private $price_legal = '100';
+    private $price_real = '100';
     public function create(){
         $provinces = Province::all();
         return view('signup.register',compact('provinces'));

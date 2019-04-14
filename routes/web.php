@@ -25,7 +25,7 @@ Route::group(['prefix' => Config::get('app.locale_prefix')], function () {
     Route::get('/signup','Web\SignupController@create');
     Route::post('/signup','Web\SignupController@store');
     Route::post('/signup/confimation','Web\SignupController@connect')->name('signup.payment');
-    Route::post('/arianpal','Web\SignupController@verify')->name('arianal.verify');
+    Route::post('payment/arianpal','Web\SignupController@verify')->name('arianal.verify');
 
 
 

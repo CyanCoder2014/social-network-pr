@@ -75,7 +75,7 @@
                             <div class="col-md-6 right12">
                                 <div class="input-group">
                                     <div class="input-group-addon icon-user"></div>
-                                    <input id="name" type="text" class="form-control"  placeholder="نام شرکت" name="company" value="{{ old('company') }}" required autofocus>
+                                    <input id="name" type="text" class="form-control"  placeholder="نام شرکت" name="company" value="{{ old('company') }}" autofocus>
                                 </div>
                                 @if ($errors->has('company'))
                                     <span class="help-block">
@@ -90,7 +90,7 @@
                             <div class="col-md-6 right12">
                                 <div class="input-group">
                                     <div class="input-group-addon icon-user"></div>
-                                    <input id="name" type="text" class="form-control"  placeholder="نوع شرکت" name="company_type" value="{{ old('company_type') }}" required autofocus>
+                                    <input id="name" type="text" class="form-control"  placeholder="نوع شرکت" name="company_type" value="{{ old('company_type') }}" autofocus>
                                 </div>
                                 @if ($errors->has('company_type'))
                                     <span class="help-block">
