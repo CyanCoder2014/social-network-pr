@@ -477,11 +477,11 @@
             <div class="widget white no-padding">
                 <div class="widget-tabs">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" data-target="#tab1">تالارهای پربازدید</a></li>
-                        <li><a data-toggle="tab" data-target="#tab2">جدیدترین تالارها</a></li>
+                        <li ><a data-toggle="tab" data-target="#tab1">تالارهای پربازدید</a></li>
+                        <li class="active"><a data-toggle="tab" data-target="#tab2">جدیدترین تالارها</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="tab1" class="tab-pane fade in active">
+                        <div id="tab1" class="tab-pane fade ">
                             <ul class="forum-threads" id="forum-scroll">
 
                                 @foreach($bestForums as $bestForum1)
@@ -510,7 +510,7 @@
 
                             </ul>
                         </div>
-                        <div id="tab2" class="tab-pane fade">
+                        <div id="tab2" class="tab-pane fade in active">
                             <ul class="forum-threads" id="forum-scroll">
                                 @foreach($lastForums as $lastForum)
 
