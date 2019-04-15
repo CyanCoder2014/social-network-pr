@@ -28,7 +28,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -102,7 +101,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="app_information_bullet">
                         <div class="row">
-                            <div class="col-sm-3 col-xs-12 ">
+                            <div class="col-sm-3 col-xs-12">
                                 <div class="app_feature_bullets app_feature_bullets_1" style="overflow: hidden">
                                     <img src="{{asset($value->data['image'])}}">
                                 </div>
@@ -311,20 +310,20 @@ blog_name_designation_2
 
                         @foreach($utility['slider_3'] as $key => $slide)
                         <div class="item item_employee">
-                            <div class="image-scale" style="height: 120px;overflow: hidden">
+                            <div class="image-scale" style="height: 160px;overflow: hidden">
                                 <img src="{{asset($slide->data['image'])}}" alt="Image">
                             </div>
 
                             <div class="team_member_detail
 
-@if($key%2 == 0)
+                                    @if($key%2 == 0)
                                     team_member_detail_4
                                     @endif">
-                                <p>نام و نام خانوادگی </p>
+                                <p style="font-size: 12px">   {{$slide->data['link_fa']}} </p>
                                 <ul class="social">
 
                                     <li>
-                                        دکتری انرژی
+                                        {{$slide->data['link']}}
                                     </li>
 
                                 </ul>
@@ -413,7 +412,7 @@ blog_name_designation_2
                             @endif
                         </p>
                         <br><br>
-                        <a href="/" class="contact_form_button yekan" style="padding: 15px;padding-right: 35px;padding-left: 35px">عضویت در باشگاه</a>
+                        <a href="/signup" class="contact_form_button yekan" style="padding: 15px;padding-right: 35px;padding-left: 35px">عضویت در باشگاه</a>
 
                     </div>
 
