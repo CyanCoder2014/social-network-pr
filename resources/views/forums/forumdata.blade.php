@@ -112,18 +112,23 @@
                 <div class="timeline-content">
                     <img style="width: 100%; margin-bottom: 10px" src="" alt=""/>
                     <div class="post-data-{{$post->id}}">
-                    <p   id="content-{{$post->id}}">
+                        <p id="content-{{$post->id}}">
+
+                            <?php
+                            $url = '~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i';
+                            $string = preg_replace($url, '<a href="$0" target="_blank" title="$0">$0</a>', nl2br($post->intro));
+                            ?>
+                            {!! \Illuminate\Support\Str::words($string, $words = 51, $end = '...') !!}
 
 
-                        <?php
-                        $url = '~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i';
-                        $string = preg_replace($url, '<a href="$0" target="_blank" title="$0">$0</a>', nl2br($post->intro));
-                        ?>
-                        {!! \Illuminate\Support\Str::words($string, $words = 190, $end = '...') !!}
-                        @if (strlen($post->intro) > 1000)
-                            <a id="more-{{$post->id}}">نمایش بیشتر </a>
-                        @endif
-                    </p>
+                            @if (Auth::check())
+                                @if (strlen($post->intro) > 270|| strlen($post->text) > 6)
+                                    <a id="more-{{$post->id}}">نمایش بیشتر </a>
+                                @endif
+                            @endif
+
+
+                        </p>
                     <p class="post-data12-{{$post->id}}" id="contentFull-{{$post->id}}">
                     </p>
                     </div>

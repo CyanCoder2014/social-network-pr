@@ -288,10 +288,11 @@
                             </div>
                             <input type="hidden" name="state" value="1">
 
+                            <input type="hidden" name="intro" value="متن: ">
 
                             <br><br><br><br>
                             <div class="col-md-12"><br><br>
-                                <textarea title="text" name="intro" id="editor2" rows="10" cols="80"></textarea>
+                                <textarea title="text" name="text" id="editor2" rows="10" cols="80"></textarea>
                                 <br>
 
                             </div>

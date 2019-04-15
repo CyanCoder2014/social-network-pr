@@ -487,7 +487,19 @@
                                 @foreach($bestForums as $bestForum1)
                                 <li>
                                     <div class="user-avatar">
-                                        <span><img style="margin-top:11px;width: 53px;min-height: 59px" src="<?= Url('forum-images/'. $bestForum1->image) ?>" alt=""/></span>
+                                        <span>
+                                               <img style=" margin-top:11px;width: 53px;min-height: 55px"
+                                                    @if( ! empty($bestForum1->image))
+
+                                                    src="<?= Url('forum-images/'. $bestForum1->image) ?>"
+                                                    @else
+                                                    src="/assets/images/logo.png"
+
+                                                    @endif
+
+                                                    alt=""/>
+
+                                        </span>
                                     </div>
                                     <a href="<?= Url('/home/forum/show/'.$bestForum1->id); ?>" title="">{{$bestForum1->title}}</a>
                                     <h3>ارائه توسط<a  href="<?= Url('home/profile/show/137-'.$bestForum1->user->id.'-42-'.$bestForum1->user->username); ?>" title="{{$bestForum1->user->name.' '.$bestForum1->user->family}}"> {{$bestForum1->user->username}}</a></h3>
@@ -501,17 +513,30 @@
                         <div id="tab2" class="tab-pane fade">
                             <ul class="forum-threads" id="forum-scroll">
                                 @foreach($lastForums as $lastForum)
-                                    @if( ! empty($lastForum->image))
 
                                     <li>
                                         <div class="user-avatar">
-                                            <span><img style=" margin-top:11px;width: 53px;min-height: 55px" src="<?= Url('forum-images/'. $lastForum->image) ?>" alt=""/></span>
+                                            <span>
+
+
+                                                <img style=" margin-top:11px;width: 53px;min-height: 55px"
+                                                     @if( ! empty($lastForum->image))
+
+                                                     src="<?= Url('forum-images/'. $lastForum->image) ?>"
+                                                     @else
+                                                     src="/assets/images/logo.png"
+
+                                                     @endif
+
+                                                       alt=""/>
+
+
+                                            </span>
                                         </div>
                                         <a href="<?= Url('/home/forum/show/'.$lastForum->id); ?>" title="">{{$lastForum->title}}</a>
                                         <h3>ارائه توسط<a  href="<?= Url('home/profile/show/137-'.$lastForum->user->id.'-42-'.$lastForum->user->username); ?>" title="{{$lastForum->user->name.' '.$lastForum->user->family}}"> {{$lastForum->user->username}}</a></h3>
                                         <i>{!! to_jalali_date($lastForum->created_at) !!}</i>
                                     </li>
-                                    @endif
 
                                 @endforeach
 

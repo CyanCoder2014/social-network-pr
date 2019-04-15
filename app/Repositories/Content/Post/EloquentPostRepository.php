@@ -62,7 +62,7 @@ function findByIds(array $ids)
 public
 function createByUserId(Request $request, $user)
 {
-    $content = new Post();
+    $content = new Post;
 
     if ($request->image == null) {
         $content->image = 'null';

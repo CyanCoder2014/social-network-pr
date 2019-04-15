@@ -52,8 +52,8 @@ class HomeController extends BaseController
 
         $lastCourses = Course::paginate(4);
         $bestCourses = Course::orderBy('view', 'desc')->paginate(4);
-        $lastForums = Forum::paginate(4);
-        $bestForums = Forum::orderBy('view', 'desc')->paginate(4);
+        $lastForums = Forum::paginate(5);
+        $bestForums = Forum::orderBy('view', 'desc')->paginate(5);
 
         $userActivities = UserActivity::where('types_id', '1')->orderBy('created_at', 'desc')->paginate(18);
 
