@@ -402,7 +402,7 @@ blog_name_designation_2
                 <div class="col-xs-12 ">
                     <div class="section">
                         <h3 style="font-size: 35px" class="yekan" ><i class="fa fa-quote-left" aria-hidden="true"></i>
-                            درباره ما <i class="fa fa-quote-right" aria-hidden="true"></i>
+                             عضویت در باشگاه صاحبنظران انرژی ایرانیان <i class="fa fa-quote-right" aria-hidden="true"></i>
                         </h3>
                         <p style="font-size: 14px">
                             @if(App::getLocale() == 'en')
