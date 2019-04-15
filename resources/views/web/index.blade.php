@@ -231,6 +231,10 @@ blog_name_designation_2
             </div>
         </div>
     </div>
+
+
+
+
     <!-- Page Content Get App-->
     <!-- Page Content Pricing Plans
         <div class="page_content_pricing_plan page_content_headings" id="page_content_prices">
@@ -298,6 +302,8 @@ blog_name_designation_2
             </div>
         </div>
     <!-- /Page Content Pricing Plans -->
+
+
     <!-- Page Content Team-->
     <div class="page_content_team">
         <div class="container">
