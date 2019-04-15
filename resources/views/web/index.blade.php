@@ -140,7 +140,7 @@
     <!-- Page Content BlogSpot -->
     <div class="page_content_recent_blogspot" id="page_content_news">
         <div class="container">
-            <h2>  درباره باشگاه صاحبنظران انرژی ایرانیان </h2>
+            <h2>  درباره باشگاه صاحب نظران انرژی ایرانیان </h2>
             <img src="/new/images/divider_cyan.png" alt="divider_cyan">
             <p> </p>
             <div class="recent_blogspot">
