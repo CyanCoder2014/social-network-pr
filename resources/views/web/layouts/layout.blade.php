@@ -230,9 +230,11 @@
 <!-- Page Content Website Owner Information -->
 <div class="page_content_owner_information clearfix">
     <div class="page_content_owner_information_1 page_content_owner_information_0">
-        <i class="fa fa-group" aria-hidden="true"></i>
-        <p>کانال تلگرام</p>
-        <p>{{$contact->data['email']}}</p>
+        <a target="_blank" href="https://www.aparat.com/iraneec">
+            <img src="https://www.aparat.com/public/public/images/logo/v2/aparat_icon_color_black_64.png">
+        </a>
+        <p>کانال آپارات</p>
+
     </div>
     <div class="page_content_owner_information_1 page_content_owner_information_2">
         <i class="fa fa-envelope" aria-hidden="true"></i>
