@@ -110,7 +110,7 @@
                     <a href="#page_content_aboutus" class="scroll yekan">درباره ما</a>
                 </li>
                 <li class="active">
-                    <a href="/home/intro" class="scroll yekan" >ثبت نام اعضا</a>
+                    <a href="/signup" class="scroll yekan" >ثبت نام اعضا</a>
                 </li>
 
                 <li>
