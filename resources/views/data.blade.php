@@ -86,7 +86,7 @@
                     </div>
                 @endif
                 <div class="timeline-content">
-                    @if($post->image !== 'null' || $post->image !== '')
+                    @if($post->image != 'null' && $post->image != '')
                         <div id="image-1234-{{$post->id}}" style=" max-height: 600px;overflow: hidden;margin-bottom: 10px">
                    <img id="imgSmall{{$post->id}}" style="border:1px solid #ecf5ec;width: 100%; margin-bottom: 10px;" src="<?= Url('/post-images/'.$post->image); ?>" alt=""/>
                         </div>

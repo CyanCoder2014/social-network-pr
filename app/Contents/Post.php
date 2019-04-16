@@ -42,8 +42,9 @@ class Post extends Model
     }
 
 
-    public function share($postId)
-    {
-        return Post::where('id', $postId)->first();
-    }
+//    public function share($postId)
+//    {
+//
+//        return Post::where('id', $postId)->first();
+//    }
 }
