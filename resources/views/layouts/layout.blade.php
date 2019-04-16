@@ -349,6 +349,10 @@ Iranian National Community of the Energy and Environmen , انرژی, شبکه �
             <div class="name-area">
                 <a href="<?= Url('home/course/categories') ?>" title=""> <strong style="font-size: 14px"><i class="fa fa-leanpub"></i> &nbsp;دوره‌ها  </strong></a>
             </div>
+
+            <div class="name-area">
+                <a href="<?= Url('/') ?>" title=""> <strong style="font-size: 14px"><i class="fa fa-leanpub"></i> &nbsp;صفحه اصلی  </strong></a>
+            </div>
             <div class="name-area">
                         @if(Auth::check())
                             <a href="<?= Url('home/profile/show/137-'.Auth::user()->id.'-42-'.Auth::user()->username); ?>" title=""><strong style="font-size: 14px"> &nbsp;&nbsp;&nbsp;
@@ -423,6 +427,10 @@ Iranian National Community of the Energy and Environmen , انرژی, شبکه �
                         @endcan
 
                     @endif
+
+                        <li class="menu-item">
+                            <a href="<?= Url('/') ?>" title=""><i class="ti-pencil"></i><span> صفحه اصلی<i class="badge skyblue-bg">3</i></span></a>
+                        </li>
                     <li class="menu-item">
                         <a href="<?= Url('home/course/categories') ?>" title=""><i class="ti-pencil"></i><span>دروه ها<i class="badge skyblue-bg">3</i></span></a>
                     </li>
