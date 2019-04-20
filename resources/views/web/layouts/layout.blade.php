@@ -260,8 +260,11 @@
     </div>
     <div class="page_content_owner_information_1 page_content_owner_information_5">
         <i class="fa fa-globe" aria-hidden="true"></i>
-        <p>آدرس وب سایت</p>
-        <p>www.iraneec.ir</p>
+        <!-- Gateway Verify Logo -->
+        <script language="javascript" type="text/javascript"  src="http://www.arianpal.com/xContext/Component/Verify/?UI=fc334fded9694ba387e152daf1c055e8&GID=527340012&MID=BBBF07847C12D585BBF16E2FC099CDEAA53DC7D6&Mode=7" >
+        </script>
+        <noscript><a title="درگاه پرداخت"  href="http://www.arianpal.com" >درگاه پرداخت آرین پال</a></noscript>
+        <!-- Gateway Verify Logo -->
     </div>
 </div>
 <!-- /Page Content Website Owner Information -->
