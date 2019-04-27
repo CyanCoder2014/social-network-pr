@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class AdminSignupController extends Controller
 {
     public function index(){
-        $signups = Signup::OrderBy('id','desc')->paginate(25);
+        $signups = Signup::OrderBy('id','desc')->paginate(10);
         return view('admin.signup.manage',compact('signups'));
     }
 }
