@@ -1,5 +1,5 @@
-@extends('layouts.layout')
-@section('content')
+@extends('layouts.admin')
+@section('admin_content')
     <div id="content"><br>
         <div class="inner" style="min-height: 565px;">
             <div class="row">
