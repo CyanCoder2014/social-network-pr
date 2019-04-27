@@ -13,7 +13,7 @@ class Signup extends Model
     ];
 
     public function transaction(){
-        return $this->belongsTo(Transaction::class);
+        return $this->morphOne(Transaction::class,'refrence');
     }
 
 }
