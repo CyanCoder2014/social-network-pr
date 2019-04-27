@@ -8,7 +8,6 @@
                         <div class="row ">
                             <div class="col-lg-12 col-md-12  col-sm-12 col-xs12 ">
                                 <div class="title_sec">
-                                    <a data-toggle="modal" data-target=".add-page" style="float: left" class="btn btn-primary"><i class="fa fa-plus"></i> افزودن صفحه </a>
 
                                     <h1>مدیریت  ثبت نامی ها </h1>
                                 </div>
@@ -22,27 +21,23 @@
                                            id="dataTables-example">
                                         <thead>
                                         <tr>
-                                            <th style="text-align: center">&nbsp;عنوان صفحه</th>
-                                            <th style="text-align: center">&nbsp;تاریخ انتشار</th>
-                                            <th style="text-align: center"> لینک صفحه</th>
-                                            <th style="text-align: center"> ویرایش</th>
-                                            <th style="text-align: center">حذف</th>
+                                            <th style="text-align: center">&nbsp;نام</th>
+                                            <th style="text-align: center">&nbsp;کد ملی</th>
+                                            <th style="text-align: center">&nbsp;تاریخ</th>
+                                            <th style="text-align: center">وضعیت پرداخت</th>
+                                            <th style="text-align: center"> شماره پیگیری</th>
+                                            <th style="text-align: center">مبلغ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($contents as $content)
+                                        @foreach($signups as $signup)
                                             <tr class="odd gradeX">
-                                                <th style="text-align: center"> &nbsp; <a target="_blank" href="<?= Url('/content/page/'.$content->id); ?>">{{$content->title}} </a></th>
-                                                <th style="text-align: center; font-weight: 100">{!!  to_jalali_date($content->created_at) !!}</th>
-                                                <th style="text-align: center; font-weight: 100"> <?= Url('/content/page/'.$content->id); ?> </th>
-                                               <th style="text-align: center; font-weight: 100"><a data-toggle="modal" data-target=".edit-page-{{$content->id}}" class="btn btn-warning "><i class="fa fa-edit"></i></a></th>
-                                                <th style="text-align: center; font-weight: 100">
-                                                    @if($content->id >= 4)
-                                                    <a onclick="return confirm('آیا از حذف این صفحه مطمئن هستید؟');"  href="<?= Url('/home/admin/content/delete/'.$content->id); ?>" class="btn btn-danger"><i class="fa fa-remove"></i></a>
-                                                    @endif
-                                                </th>
-
-
+                                                <th style="text-align: center"> &nbsp; {{$signup->name}}</th>
+                                                <th style="text-align: center"> &nbsp; {{$signup->national_code}}</th>
+                                                <th style="text-align: center; font-weight: 100">{!!  to_jalali($signup->created_at) !!}</th>
+                                                <th style="text-align: center; font-weight: 100"> @if(isset($signup->transaction)){{ $signup->transaction->status() }} @else {{ 'تراکنشی وجود ندارد' }} @endif</th>
+                                               <th style="text-align: center; font-weight: 100">{{ $signup->transaction->tracking_code??'تراکنشی وجود ندارد' }}</th>
+                                                <th style="text-align: center; font-weight: 100">{{ $signup->transaction->price??'تراکنشی وجود ندارد' }}</th>
 
                                             </tr>
 
@@ -56,7 +51,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{$contents->links()}}
+                        {{$signups->links()}}
                         <br><br>
                     </div>
 
@@ -133,10 +128,10 @@
 
 
 
-    @foreach($contents as $content)
+    @foreach($signups as $signup)
 
 
-        <div class="modal fade edit-page-{{$content->id}}" tabindex="-1" role="dialog">
+        <div class="modal fade edit-page-{{$signup->id}}" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -145,7 +140,7 @@
                     </div>
 
                     <form name="_token" method="POST" enctype="multipart/form-data"
-                          action="<?= Url('/home/admin/content/update/'.$content->id); ?>">
+                          action="<?= Url('/home/admin/content/update/'.$signup->id); ?>">
                         {{ csrf_field() }}
                         <div class="modal-body">
 
@@ -154,7 +149,7 @@
 
                             <div class="col-md-12">
                                 <div class="input-group"><p style="float: right">  عنوان صفحه</p>
-                                    <input required name="title" type="text" value="{{$content->title}}" class="form-control">
+                                    <input required name="title" type="text" value="{{$signup->title}}" class="form-control">
                                 </div>
                             </div>
 
@@ -162,7 +157,7 @@
 
                             <br><br><br><br>
                             <div class="col-md-12">
-                                <textarea required title="text" name="intro" id="editor{{$content->id}}" rows="10" cols="80" >{!! $content->intro !!}</textarea><br>
+                                <textarea required title="text" name="intro" id="editor{{$signup->id}}" rows="10" cols="80" >{!! $signup->intro !!}</textarea><br>
                             </div>
 
                         </div>
@@ -177,7 +172,7 @@
 
 
         <script>
-            CKEDITOR.replace( 'editor{{$content->id}}',{
+            CKEDITOR.replace( 'editor{{$signup->id}}',{
                 filebrowserBrowseUrl :'<?= Url('/'); ?>/assets/plugins/ckeditor/filemanager/browser/default/browser.html?Connector=<?= Url('/'); ?>/assets/plugins/ckeditor/filemanager/connectors/php/connector.php',
                 filebrowserImageBrowseUrl : '<?= Url('/'); ?>/assets/plugins/ckeditor/filemanager/browser/default/browser.html?Type=Image&Connector=<?= Url('/'); ?>/assets/plugins/ckeditor/filemanager/connectors/php/connector.php',
                 filebrowserFlashBrowseUrl :'<?= Url('/'); ?>/assets/plugins/ckeditor/filemanager/browser/default/browser.html?Type=Flash&Connector=<?= Url('/'); ?>/assets/plugins/ckeditor/filemanager/connectors/php/connector.php',
