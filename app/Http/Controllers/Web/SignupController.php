@@ -102,6 +102,7 @@ class SignupController extends Controller
         $price = ($request->personality == 'real')?$this->price_real:$this->price_legal;
         $transaction->make($price,$signup);
         $signup->transaction_id = $transaction->getId();
+        $signup->save();
         if ($request->personality == 'legal' && isset($request->name_2)){
             $signup = new Signup();
             $signup->active = 0;
