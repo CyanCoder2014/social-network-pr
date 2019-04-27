@@ -201,6 +201,10 @@
                     </ul>
 
                 </li>
+                <li>
+                    <a href="<?= Url('/admin/sigups'); ?>" title=""><span><i class="fa fa-map red-bg"></i></span><i>   مدیریت ثبت نامی ها  </i><h6></h6>
+                    </a>
+                </li>
                 <!--END ADMIN SETTINGS -->
             </ul>
 

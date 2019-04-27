@@ -281,10 +281,6 @@ Iranian National Community of the Energy and Environmen , انرژی, شبکه �
                                 <a href="<?= Url('home/event/category'); ?>" title=""><span><i class="fa fa-map red-bg"></i></span><i>   مشاهده رویدادها  </i><h6></h6>
                                 </a>
                             </li>
-                            <li>
-                                <a href="<?= Url('/admin/sigups'); ?>" title=""><span><i class="fa fa-map red-bg"></i></span><i>   مدیریت ثبت نامی ها  </i><h6></h6>
-                                </a>
-                            </li>
                             @can('admin', \App\Contents\Post::class)
                                 <li>
                                     <a href="<?= Url('/home/admin/content/manage'); ?>" title=""><span><i class="ti-crown red-bg"></i></span>  مدیریت صفحات<h6></h6></a>
