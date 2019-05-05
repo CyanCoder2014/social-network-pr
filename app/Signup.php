@@ -11,4 +11,9 @@ class Signup extends Model
       'career' => 'array',
       'science' => 'array',
     ];
+
+    public function transaction(){
+        return $this->morphOne(Transaction::class,'refrence');
+    }
+
 }

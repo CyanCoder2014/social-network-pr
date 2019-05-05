@@ -691,7 +691,7 @@ Iranian National Community of the Energy and Environmen , انرژی, شبکه �
     @endif
 
 
-    @if ($errors->any())
+    @if (isset($errors) && $errors->any())
     @foreach ($errors->all() as $error)
     toastr.warning("{{  $error }}")
     @endforeach
