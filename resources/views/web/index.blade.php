@@ -311,7 +311,7 @@ blog_name_designation_2
             <img src="/new/images/divider_cyan.png" alt="divider_cyan" class="for_separate_img">
             <p class="page_content_headings_team"></p>
             <div class="team_slider">
-                <div class="team-slider1">
+                <div class="team-slider">
                     <div id="owl-demo1">
 
                         @foreach($utility['slider_3'] as $key => $slide)
@@ -338,7 +338,7 @@ blog_name_designation_2
 
                         @endforeach
 
-
+                          
 
 
 

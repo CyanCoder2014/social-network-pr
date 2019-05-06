@@ -48,7 +48,7 @@ class HomeController extends Controller
         $utility['team']=Utility::where('type',"team")->orderBy('id', 'desc')->take(6)->get();
         $utility['slider']=Utility::where('type',"slider")->orderBy('id', 'desc')->take(6)->get();
         $utility['slider_2']=Utility::where('type',"slider_2")->orderBy('id', 'desc')->take(8)->get();
-        $utility['slider_3']=Utility::where('type',"slider_3")->orderBy('id', 'desc')->take(6)->get();
+        $utility['slider_3']=Utility::where('type',"slider_3")->orderBy('id', 'desc')->take(20)->get();
         $utility['customers']=Utility::where('type',"customers")->orderBy('id', 'desc')->take(10)->get();
         $utility['faq']=Utility::where('type',"faq")->orderBy('id', 'desc')->take(5)->get();
         $delegates=Delegate::orderby('id','desc')->paginate(20);
