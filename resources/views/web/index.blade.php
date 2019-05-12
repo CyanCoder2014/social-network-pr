@@ -55,7 +55,7 @@
                 <div class="col-md-2 col-sm-6">
                     <div class="facts_information facts_information_1">
                         <h5><span class="count">21</span></h5>
-                        <p>اعضای رسمی باشگاه</p>
+                        <p>اعضای هیئت امنا باشگاه</p>
                         <i class="fa fa-building" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -307,7 +307,7 @@ blog_name_designation_2
     <!-- Page Content Team-->
     <div class="page_content_team">
         <div class="container">
-            <h2 class="yekan">  اعضای رسمی باشگاه</h2>
+            <h2 class="yekan">  اعضای هیئت امنا باشگاه</h2>
             <img src="/new/images/divider_cyan.png" alt="divider_cyan" class="for_separate_img">
             <p class="page_content_headings_team"></p>
             <div class="team_slider">
@@ -338,6 +338,7 @@ blog_name_designation_2
 
                         @endforeach
 
+                          
 
 
 
