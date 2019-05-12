@@ -46,8 +46,8 @@ class Signup extends Model
     }
     public function active(){
         if ($this->active== 0)
-            return 'اینترنتی';
-        return 'تایید دستی پرداخت';
+            return 'اینترنتی (تایید نهایی نشده)';
+        return ' تایید دستی پرداخت  (تایید نهایی شده)';
     }
 
 }
