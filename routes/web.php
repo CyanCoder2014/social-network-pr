@@ -245,6 +245,8 @@ Route::group(['prefix' => 'admin',], function () {
         Route::post('/product/update/{id}', 'Web\ProductController@update')->name('product.update');
         Route::get('/product/delete/{id}', 'Web\ProductController@destroy')->name('product.delete');
         Route::get('/sigups', 'Web\AdminSignupController@index')->name('adminsingnup.index');
+        Route::get('/sigup/{signup}', 'Web\AdminSignupController@edit')->name('adminsingnup.edit');
+        Route::post('/sigup/{signup}', 'Web\AdminSignupController@update');
 
 
     });
