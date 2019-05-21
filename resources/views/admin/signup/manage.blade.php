@@ -190,7 +190,7 @@
                             </div>
                             <div>
                                 <span>شهر:</span>
-                                {{$signup->city->name}}
+                                {{$signup->city->name??"نامعلوم"}}
                             </div>
                             <div>
                                 <span>آدرس:</span>
