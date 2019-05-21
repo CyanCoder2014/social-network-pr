@@ -12,8 +12,11 @@ class Signup extends Model
       'science' => 'array',
     ];
     protected $statuses = [
-      0 => 'تایید نشده',
-      1 => 'تایید شده توسط',
+      0 => 'نامشخص',
+      1 => 'تایید عضویت برای بخش پژوهشی',
+      2 => 'تایید عضویت برای بخش آموزش',
+      3 => 'تایید عضویت برای بخش اداری',
+      4 => 'تایید عضویت برای بخش مالی',
     ];
 
     public function transaction(){
@@ -43,8 +46,8 @@ class Signup extends Model
     }
     public function active(){
         if ($this->active== 0)
-            return 'اینترنتی';
-        return 'دستی';
+            return 'اینترنتی (تایید نهایی نشده)';
+        return ' تایید دستی پرداخت  (تایید نهایی شده)';
     }
 
 }

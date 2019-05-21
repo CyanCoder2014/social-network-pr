@@ -33,8 +33,8 @@
                                         <div class="form-group required {{ $errors->has('active') ? ' has-error' : '' }}">
                                             <label for="active" class="col-md-3 right12">نوع پرداخت</label>
                                             <select name="active" id="status" class="form-control">
-                                                    <option value="0" >اینترنتی</option>
-                                                    <option value="1" @if(1 == $signup->active) selected @endif>دستی</option>
+                                                    <option value="0" > اینترنتی (تایید نهایی نشده)</option>
+                                                    <option value="1" @if(1 == $signup->active) selected @endif>تایید دستی پرداخت (تایید نهایی شده)</option>
                                             </select>
                                         </div>
                                         <div class="form-group required {{ $errors->has('gender') ? ' has-error' : '' }}">
