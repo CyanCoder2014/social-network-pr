@@ -44,7 +44,7 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $transaction->getTrackingCode() }}</td>
-                                    <td>{{ $transaction->getPrice() }}</td>
+                                    <td>{{ $transaction->getPrice() }} تومان</td>
                                 </tr>
                             </tbody>
 
