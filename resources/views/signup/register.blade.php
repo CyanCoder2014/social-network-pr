@@ -28,6 +28,10 @@
     <div class="container">
         <div class="row margin-12">
             <div class="col-md-8 col-md-offset-2">
+                <div class="alert alert-warning" role="alert">
+                   با توجه به اینکه ایمیل شما نام کاربری یکتای شما در سایت است در صورتی که قبلا  در این سایت ثبت نام داشته داشته اید برای ثبت نام مجدد یا از ایمیل جدید استفاده کنید یا ایمیل و رمز عبور قبلی خود را به درستی وارد نمایید
+                    درصورتی که رمز خود را فراموش کرده از طیق این <a href="{{ url('password/reset') }}">لینک</a> اقدام نمایید
+                </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">لطفا اطلاعات زیر را جهت ثبت نام وارد نمایید. </div>
                     <div class="panel-body">
